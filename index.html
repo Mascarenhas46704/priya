@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Milton Mascarenhas Portfolio</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #f8f8f8;
+            padding: 10px 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        nav .logo {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        nav .nav-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        nav .nav-links a {
+            text-decoration: none;
+            font-size: 16px;
+            color: #333;
+            padding: 10px 15px;
+            transition: background 0.3s ease;
+        }
+
+        nav .nav-links a:hover {
+            background-color: #ddd;
+            border-radius: 5px;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            justify-content: space-between;
+            padding: 20px;
+            text-align: left;
+        }
+
+        .intro {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .intro-text {
+            max-width: 100%;
+            flex: 1 1 300px;
+        }
+
+        .intro-text h1 {
+            font-size: 50px;
+            margin: 0;
+            color: #333;
+        }
+
+        .intro-text h2 {
+            font-size: 40px;
+            margin: 10px 0;
+            color: #666;
+            display: flex;
+        }
+
+        .intro-text h2 span {
+            display: inline-block;
+            overflow: hidden;
+            white-space: nowrap;
+            animation: change-role 2s linear infinite;
+        }
+
+        @keyframes change-role {
+            0%, 50% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-40px);
+            }
+        }
+
+        .intro-text p {
+            margin: 10px 0;
+            color: #555;
+        }
+
+        .intro-text .btn {
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .intro-text .btn:hover {
+            background-color: #555;
+        }
+
+        .intro-image {
+            flex: 1 1 300px;
+            max-width: 100%;
+        }
+
+        .intro-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .about-section {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            padding: 40px 20px;
+        }
+
+        .about-image {
+            flex: 1 1 300px;
+            max-width: 100%;
+            text-align: center;
+        }
+
+        .about-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .about-text {
+            flex: 2 1 400px;
+            max-width: 100%;
+            padding: 20px;
+        }
+
+        .about-text h2 {
+            font-size: 30px;
+            color: #333;
+        }
+
+        .about-text p {
+            margin: 10px 0;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .gradient-transition {
+            height: 150px;
+            background: linear-gradient(to bottom, #f8f8f8, #111);
+        }
+
+        .recent-work {
+            padding: 50px 20px;
+            background-color: #111;
+            color: #fff;
+            text-align: center;
+            position: relative;
+        }
+
+        .recent-work h2.animated-heading {
+        font-size: 40px;
+        margin-bottom: 30px;
+        text-transform: uppercase;
+        color: #fff;
+        animation: textSlideIn 1s ease-in-out, textGlow 2s infinite alternate;
+    }
+    .recent-work h2.animated-heading {
+        font-size: 40px;
+        margin-bottom: 30px;
+        text-transform: uppercase;
+        color: #fff;
+        animation: textSlideIn 1s ease-in-out, textGlow 2s infinite alternate;
+    }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .recent-work .projects {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .recent-work .projects img {
+            max-width: 300px;
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .recent-work .projects img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(241, 239, 239, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            nav .logo {
+                font-size: 18px;
+            }
+
+            nav .nav-links {
+                gap: 10px;
+            }
+
+            .intro-text h1 {
+                font-size: 40px;
+            }
+
+            .intro-text h2 {
+                font-size: 30px;
+            }
+
+            .intro-text .btn {
+                padding: 8px 16px;
+            }
+
+            .about-section {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .about-text {
+                padding: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .intro-text h1 {
+                font-size: 30px;
+            }
+
+            .intro-text h2 {
+                font-size: 25px;
+            }
+
+            .intro-text .btn {
+                padding: 6px 12px;
+            }
+
+            .about-text h2 {
+                font-size: 25px;
+            }
+        }
+       
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">Milton Mascarenhas</div>
+        <div class="nav-links">
+            <a href="#projects">Projects</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="intro">
+            <div class="intro-text">
+                <h1>Milton Mascarenhas</h1>
+                <h2>Web <span id="role"></span></h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.</p>
+                <button class="btn">Contact Me</button>
+            </div>
+            <div class="intro-image">
+                <img src="../freepik__candid-image-photography-natural-textures-highly-r__63952.jpeg" alt="Milton Mascarenhas">
+            </div>
+        </div>
+    </div>
+
+    <div id="about" class="about-section">
+        <div class="about-image">
+            <img src="../Portfolio.png" alt="About Milton Mascarenhas">
+        </div>
+        <div class="about-text">
+            <h2>About Me</h2>
+            <p>
+                Hello! I am Milton Mascarenhas, a passionate Web Developer and Designer with over 10 years of experience. I create visually appealing, user-friendly, and responsive websites that help businesses grow and achieve their goals.
+            </p>
+            <p>
+                My journey in the tech world began with a love for solving complex problems and a keen eye for design. Today, I specialize in crafting seamless digital experiences using the latest technologies.
+            </p>
+        </div>
+    </div>
+
+    <div class="gradient-transition"></div>
+
+       <div class="recent-work">
+            <h2 class="animated-heading">Skills</h2>
+            <div class="projects">
+             <section>
+
+              <div>
+                    <img src="../Pyhton.jpeg" alt="Project 1">
+                    <h3>Python</h3>
+                </div>
+                <div>
+                    <img src="../HTNL.jpg" alt="Project 2">
+                    <h3>HTML</h3>
+                </div>
+                </section>
+                <section>
+                <div>
+                    <img src="../Java.png" alt="Project 3">
+                    <h3>Java </h3>
+                </div>
+                <div>
+                    <img src="../Screenshot (106).png" alt="Project 4">
+                    <h3>C++</h3>
+                </div>
+                </section>
+            </div>
+        </div>
+        
+
+    <script>
+        const roles = ["Developer", "Designer"];
+        let roleIndex = 0;
+        const roleElement = document.getElementById("role");
+
+        function updateRole() {
+            roleElement.textContent = roles[roleIndex];
+            roleIndex = (roleIndex + 1) % roles.length;
+        }
+
+        setInterval(updateRole, 2000);
+        updateRole();
+    </script>
+</body>
+</html>
